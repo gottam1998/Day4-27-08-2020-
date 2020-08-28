@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Exception1 {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		try {
+			
+			System.out.println("Enter the number of overs");
+			int n=s.nextInt();
+			System.out.println("Enter the number of runs for each over");
+			int a[]=new int[n];
+			for(int i=0;i<n;i++) {
+				a[i]=s.nextInt();
+			}
+			
+			System.out.println("Enter the over number ");
+			int l=s.nextInt();
+			System.out.println("Runs scored in this over : "+a[l-1]);
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+
+	}
+
+}

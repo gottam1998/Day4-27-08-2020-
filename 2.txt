@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+class CustomException extends Exception{
+	String s;
+	public CustomException(String s) {
+		super(s);
+		this.s=s;
+	}
+}
+
+public class InvalidAgeRange {
+
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		String playerName;
+		int playerAge;
+		System.out.println("Enter the player name");
+		playerName=s.nextLine();
+		System.out.println("Enter the player age");
+		playerAge=s.nextInt();
+		try {
+			if(playerAge<=39 && playerAge>=19) {
+				System.out.println("playerName : "+playerName +"\nplayerAge : "+playerAge);
+			}
+			else
+				throw new CustomException("CustomException: InvalidAgeRangeException");
+		}
+		catch(CustomException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}
